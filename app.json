@@ -9,7 +9,9 @@
     "userInterfaceStyle": "light",
     "backgroundColor": "#FBF6EE",
     "newArchEnabled": true,
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.codixr.sujood",
@@ -51,8 +53,15 @@
       "intentFilters": [
         {
           "action": "VIEW",
-          "data": [{ "scheme": "sujood" }],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "data": [
+            {
+              "scheme": "sujood"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ]
     },
@@ -104,7 +113,9 @@
       "analytics": "off",
       "publisher": "Codixr, a software agency",
       "router": {},
-      "eas": {}
+      "eas": {
+        "projectId": "788f3dbd-7c75-416c-9be7-8111e6952680"
+      }
     },
     "owner": "muddasir_hayat"
   }
