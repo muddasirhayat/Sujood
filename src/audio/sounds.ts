@@ -2,9 +2,9 @@ import { Platform } from "react-native";
 import type { AzanSound } from "../prayer/schedule";
 
 const MODULES: Record<AzanSound | "chime", number> = {
-  dawn: require("../../assets/sounds/azan-dawn.wav"),
-  classic: require("../../assets/sounds/azan-classic.wav"),
-  dusk: require("../../assets/sounds/azan-dusk.wav"),
+  dawn: require("../../assets/sounds/azan_dawn.wav"),
+  classic: require("../../assets/sounds/azan_classic.wav"),
+  dusk: require("../../assets/sounds/azan_dusk.wav"),
   chime: require("../../assets/sounds/chime.wav"),
 };
 

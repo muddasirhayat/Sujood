@@ -59,7 +59,7 @@ Sujood bundles only texts and media whose licences were checked on 12 November 2
 
 ## Azan audio
 
-- The bundled sounds (`azan-dawn.wav`, `azan-classic.wav`, `azan-dusk.wav`, `chime.wav`) are gentle generated tones, original to Sujood. They are not a recited Azan.
+- The bundled sounds (`azan_dawn.wav`, `azan_classic.wav`, `azan_dusk.wav`, `chime.wav`) are gentle generated tones, original to Sujood. They are not a recited Azan.
 - A royalty-free recited Azan was not bundled because a verifiable licence was not confirmed.
 
 ## App icon

@@ -97,9 +97,9 @@
         {
           "color": "#5C7A62",
           "sounds": [
-            "./assets/sounds/azan-dawn.wav",
-            "./assets/sounds/azan-classic.wav",
-            "./assets/sounds/azan-dusk.wav",
+            "./assets/sounds/azan_dawn.wav",
+            "./assets/sounds/azan_classic.wav",
+            "./assets/sounds/azan_dusk.wav",
             "./assets/sounds/chime.wav"
           ]
         }

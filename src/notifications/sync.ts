@@ -6,9 +6,9 @@ import { buildRollingSchedule, type ScheduledAlert } from "../prayer/schedule";
 import { ayahForDay, dayOfYear, DAILY_DUA } from "../content/quran";
 
 const SOUND_FILE: Record<string, string> = {
-  dawn: "azan-dawn.wav",
-  classic: "azan-classic.wav",
-  dusk: "azan-dusk.wav",
+  dawn: "azan_dawn.wav",
+  classic: "azan_classic.wav",
+  dusk: "azan_dusk.wav",
   chime: "chime.wav",
 };
 
@@ -56,7 +56,7 @@ export async function syncAzanSchedule(state: PersistedState, now: Date): Promis
         await Notifications.setNotificationChannelAsync(id, {
           name: id.startsWith("azan") ? "Azan" : "Reminders",
           importance: Notifications.AndroidImportance.MAX,
-          sound: file,
+          sound: file.replace(/\.wav$/, ""),
           vibrationPattern: [0, 250, 250, 250],
           lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
           enableVibrate: true,
