@@ -1,0 +1,111 @@
+{
+  "expo": {
+    "name": "Sujood",
+    "slug": "sujood",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "sujood",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FBF6EE",
+    "newArchEnabled": true,
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.codixr.sujood",
+      "userInterfaceStyle": "light",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Sujood uses your location on this phone to calculate prayer times, the Qibla direction, and nearby mosques. Location is never sent to us.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Sujood uses your location on this phone to calculate prayer times, the Qibla direction, and nearby mosques. Location is never sent to us."
+      }
+    },
+    "android": {
+      "package": "com.codixr.sujood",
+      "versionCode": 1,
+      "userInterfaceStyle": "light",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F6EFE4"
+      },
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE",
+        "android.permission.WAKE_LOCK"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO",
+        "com.google.android.c2dm.permission.RECEIVE",
+        "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+        "android.permission.ACCESS_BACKGROUND_LOCATION"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [{ "scheme": "sujood" }],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-audio",
+      "expo-dev-client",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Sujood uses your location on this phone to calculate prayer times, the Qibla direction, and nearby mosques. Location is never sent to us.",
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FBF6EE",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#5C7A62",
+          "sounds": [
+            "./assets/sounds/azan-dawn.wav",
+            "./assets/sounds/azan-classic.wav",
+            "./assets/sounds/azan-dusk.wav",
+            "./assets/sounds/chime.wav"
+          ]
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "ads": "off",
+      "analytics": "off",
+      "publisher": "Codixr, a software agency",
+      "router": {},
+      "eas": {}
+    },
+    "owner": "muddasir_hayat"
+  }
+}
