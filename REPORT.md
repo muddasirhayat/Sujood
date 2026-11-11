@@ -72,4 +72,17 @@ Onboarding's higher MAE is mostly anti-aliasing and slight card metrics; the cop
 
 ## Builds
 
-See the commit, the GitHub repository, and the EAS build pages recorded at the end of this delivery.
+Commit on `main`: `f532a5fff9a653d82d8cbb3c1227908932bf3268` (author MuddasirHayat).
+Repository: https://github.com/muddasirhayat/Sujood
+EAS project: https://expo.dev/accounts/muddasir_hayat/projects/sujood
+
+Both Android builds finished on 12 November 2026 (Asia/Karachi, UTC+5), from that commit. An earlier pair on `ee70a01` failed in prebuild because Android resource names cannot contain hyphens; the Azan tones were renamed to `azan_dawn.wav` and the rest, and prebuild then succeeded locally before this pair was started.
+
+- Development (dev client APK), finished 3:22 AM PKT
+  - https://expo.dev/accounts/muddasir_hayat/projects/sujood/builds/c7bb421e-c082-4a03-8c1d-691e03300a94
+  - https://expo.dev/artifacts/eas/z0v_AIl32YFu8hy8vygYUoSGmPSaohGN7uWHOKSfQMk.apk
+- Preview (internal APK, no dev client), finished 3:25 AM PKT
+  - https://expo.dev/accounts/muddasir_hayat/projects/sujood/builds/b33029c3-6d02-484a-a798-eb48c3839205
+  - https://expo.dev/artifacts/eas/pnZRoL2UdTsMb_E4e-tDB07sFUTjSIVh-2ggfr94Pos.apk
+
+A production AAB was optional and was not started.
