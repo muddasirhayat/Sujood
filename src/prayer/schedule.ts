@@ -1,5 +1,6 @@
 import type { DayTimes, PrayerId } from "./times";
 import { SALAH_IDS, PRAYER_NAMES } from "./times";
+import { channelIdFor } from "../notifications/channels";
 
 export type AzanSound = "dawn" | "classic" | "dusk";
 
@@ -86,7 +87,7 @@ export function buildDaySchedule(options: {
         title: PRAYER_NAMES[id],
         body: "It is time to pray",
         sound: pref.sound,
-        channelId: "azan",
+        channelId: channelIdFor("azan", pref.sound),
       });
       if (prefs.preReminder) {
         out.push({
@@ -167,7 +168,7 @@ export function buildDaySchedule(options: {
       title: "Iftar",
       body: "Maghrib has arrived.",
       sound: "dawn",
-      channelId: "azan",
+      channelId: channelIdFor("iftar", "dawn"),
     });
   }
 

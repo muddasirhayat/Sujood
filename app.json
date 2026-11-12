@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.codixr.sujood",
-      "versionCode": 3,
+      "versionCode": 4,
       "userInterfaceStyle": "light",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -52,7 +52,9 @@
         "android.permission.ACTIVITY_RECOGNITION",
         "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
         "android.permission.BODY_SENSORS",
-        "android.permission.BODY_SENSORS_BACKGROUND"
+        "android.permission.BODY_SENSORS_BACKGROUND",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
       ],
       "intentFilters": [
         {
@@ -77,7 +79,14 @@
     "plugins": [
       "expo-router",
       "expo-font",
-      "expo-audio",
+      [
+        "expo-audio",
+        {
+          "enableBackgroundPlayback": false,
+          "enableBackgroundRecording": false,
+          "recordAudioAndroid": false
+        }
+      ],
       "expo-dev-client",
       [
         "expo-location",

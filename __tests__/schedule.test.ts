@@ -37,7 +37,7 @@ describe("notification scheduling", () => {
     assert.equal(fajr.title, "Fajr");
     assert.equal(fajr.body, "It is time to pray");
     assert.equal(fajr.sound, "dawn");
-    assert.equal(fajr.channelId, "azan");
+    assert.equal(fajr.channelId, "azan-dawn");
     assert.equal(fajr.fireAt.getTime() - fajrPre.fireAt.getTime(), 15 * 60 * 1000);
   });
 

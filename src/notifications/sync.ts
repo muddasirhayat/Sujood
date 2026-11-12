@@ -4,13 +4,7 @@ import { computeForDate } from "../prayer/times";
 import { toHijri, isFriday, ymdInZone } from "../prayer/hijri";
 import { buildRollingSchedule, type ScheduledAlert } from "../prayer/schedule";
 import { ayahForDay, dayOfYear, DAILY_DUA } from "../content/quran";
-
-const SOUND_FILE: Record<string, string> = {
-  dawn: "azan_dawn.wav",
-  classic: "azan_classic.wav",
-  dusk: "azan_dusk.wav",
-  chime: "chime.wav",
-};
+import { ANDROID_CHANNELS, SOUND_FILE } from "./channels";
 
 export function upcomingAlerts(state: PersistedState, now: Date, days = 4): ScheduledAlert[] {
   const loc = state.location;
@@ -46,28 +40,27 @@ export async function syncAzanSchedule(state: PersistedState, now: Date): Promis
       }),
     });
     if (Platform.OS === "android") {
-      for (const [id, file] of Object.entries({
-        "azan-dawn": SOUND_FILE.dawn,
-        "azan-classic": SOUND_FILE.classic,
-        "azan-dusk": SOUND_FILE.dusk,
-        reminders: SOUND_FILE.chime,
-        azan: SOUND_FILE.classic,
-      })) {
-        await Notifications.setNotificationChannelAsync(id, {
-          name: id.startsWith("azan") ? "Azan" : "Reminders",
+      for (const channel of ANDROID_CHANNELS) {
+        await Notifications.setNotificationChannelAsync(channel.id, {
+          name: channel.name,
           importance: Notifications.AndroidImportance.MAX,
-          sound: file.replace(/\.wav$/, ""),
+          sound: channel.sound,
           vibrationPattern: [0, 250, 250, 250],
           lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
           enableVibrate: true,
-          bypassDnd: id.startsWith("azan"),
+          bypassDnd: channel.bypassDnd,
+          audioAttributes: {
+            usage: Notifications.AndroidAudioUsage.ALARM,
+            contentType: Notifications.AndroidAudioContentType.SONIFICATION,
+            flags: { enforceAudibility: true, requestHardwareAudioVideoSynchronization: false },
+          },
         });
       }
     }
     const alerts = upcomingAlerts(state, now, 3).slice(0, 50);
     await Notifications.cancelAllScheduledNotificationsAsync();
     for (const alert of alerts) {
-      const channelId = alert.kind === "azan" || alert.kind === "iftar" ? `azan-${alert.sound}` : "reminders";
+      const channelId = alert.channelId;
       const trigger: Record<string, unknown> = {
         type: Notifications.SchedulableTriggerInputTypes.DATE,
         date: alert.fireAt,
