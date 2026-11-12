@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.codixr.sujood",
-      "versionCode": 1,
+      "versionCode": 3,
       "userInterfaceStyle": "light",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -48,7 +48,11 @@
         "android.permission.READ_MEDIA_AUDIO",
         "com.google.android.c2dm.permission.RECEIVE",
         "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
-        "android.permission.ACCESS_BACKGROUND_LOCATION"
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.ACTIVITY_RECOGNITION",
+        "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
+        "android.permission.BODY_SENSORS",
+        "android.permission.BODY_SENSORS_BACKGROUND"
       ],
       "intentFilters": [
         {
