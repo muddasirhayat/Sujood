@@ -1,4 +1,4 @@
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { Linking, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
 import { ScreenShell } from "@/src/components/Chrome";
 import { AppText, Card, SageButton, SectionLabel, Toggle } from "@/src/components/ui";
@@ -83,6 +83,14 @@ export default function SettingsScreen() {
         </Pressable>
         <Pressable onPress={() => router.push("/settings/about")} style={styles.linkRow} accessibilityRole="button">
           <AppText style={styles.link}>About and credits</AppText>
+          <AppText style={styles.chev}>›</AppText>
+        </Pressable>
+        <Pressable onPress={() => void Linking.openURL("https://codixr.com/sujood/privacy")} style={styles.linkRow} accessibilityRole="link">
+          <AppText style={styles.link}>Privacy Policy</AppText>
+          <AppText style={styles.chev}>›</AppText>
+        </Pressable>
+        <Pressable onPress={() => void Linking.openURL("https://codixr.com/sujood/terms")} style={styles.linkRow} accessibilityRole="link">
+          <AppText style={styles.link}>Terms of Use</AppText>
           <AppText style={styles.chev}>›</AppText>
         </Pressable>
         <View style={{ height: 20 }} />

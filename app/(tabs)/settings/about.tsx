@@ -36,9 +36,14 @@ export default function AboutScreen() {
           <AppText style={styles.h}>Azan sounds</AppText>
           <AppText style={styles.p}>The Azan sounds in this version are gentle generated tones, not a recited Azan. They are original to Sujood. A royalty-free recited Azan was not bundled because a verifiable licence was not confirmed.</AppText>
         </Card>
-        <Card>
+        <Card style={{ marginBottom: 14 }}>
           <AppText style={styles.h}>Prayer times</AppText>
           <AppText style={styles.p}>Times are calculated on the device with the adhan library (MIT licence). The default is the University of Islamic Sciences, Karachi method, with Hanafi Asr.</AppText>
+        </Card>
+        <Card>
+          <AppText style={styles.h}>Legal</AppText>
+          <Link href="https://codixr.com/sujood/privacy">Privacy Policy</Link>
+          <Link href="https://codixr.com/sujood/terms">Terms of Use</Link>
         </Card>
         <View style={{ height: 20 }} />
       </ScrollView>
